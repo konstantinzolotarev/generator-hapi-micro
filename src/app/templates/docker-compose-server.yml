@@ -1,0 +1,8 @@
+server:
+  build: .
+  working_dir: /var/www/service/
+  command: node app.js
+  ports:
+    - "3000:3000"
+  links:
+    - mongo:mongo

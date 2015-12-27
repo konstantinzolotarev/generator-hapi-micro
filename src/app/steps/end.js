@@ -8,9 +8,10 @@ import printMessage from 'print-message';
 
 export default function () {
   printMessage([
-    `Your ${chalk.green('Trails')} Application has been created!`,
+    `Your ${chalk.green('Hapi')} Application has been created!`,
     `---`,
-    `To start your application, run: ${chalk.red('npm start')}`
+    `To start your application, run: ${chalk.red('npm start')}`,
+    `Main URL: http://localhost:3000/api/v1`
   ], {
     printFn: this.log
   });

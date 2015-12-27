@@ -1,14 +1,15 @@
 export default [
   {
-    type: 'list',
-    name: 'web-engine',
-    message: 'Choose a Web Server',
-    choices: [
-      'hapi',
-      'express4',
-      'koa',
-      'restify'
-    ],
-    defaults: 'hapi'
+    type: 'confirm',
+    name: 'generate-docker',
+    message: 'Generate Dockerfile',
+    defaults: true
+  },
+
+  {
+    type: 'confirm',
+    name: 'generate-tests',
+    message: 'Generate tests',
+    defaults: true
   }
 ]

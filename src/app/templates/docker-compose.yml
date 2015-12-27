@@ -1,0 +1,6 @@
+app:
+  extends:
+    file: docker-compose-server.yml
+    service: server
+  volumes:
+    - ./:/var/www/service/
