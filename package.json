@@ -1,0 +1,78 @@
+{
+  "name": "generator-hapi-micro",
+  "version": "0.0.5",
+  "description": "Hapi Microservice Yeoman Generator",
+  "main": "generators/app/index.js",
+  "keywords": [
+    "yeoman-generator",
+    "hapi",
+    "microservice",
+    "boilerplate",
+    "scaffolder",
+    "scaffold",
+    "yeoman",
+    "generator"
+  ],
+  "homepage": "https://github.com/trailsjs/generator-hapi-micro",
+  "bugs": {
+    "url": "https://github.com/trailsjs/generator-hapi-micro/issues",
+    "email": "bugs@trailsjs.io"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Eugene Obrezkov",
+    "email": "ghaiklor@gmail.com",
+    "url": "http://ghaiklor.com/"
+  },
+  "contributors": [
+    {
+      "name": "Konstantin Zolotarev",
+      "url": "https://github.com/konstantinzolotarev"
+    }
+  ],
+  "scripts": {
+    "clean": "rm -rf ./generators",
+    "compile": "npm run clean && cp -r src/ generators/ && babel src --out-dir generators",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "dev": "npm run clean && cp -r src/ generators/ && babel src --watch --out-dir generators",
+    "prepublish": "npm run compile",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "babel-node node_modules/.bin/isparta cover _mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trailsjs/generator-trails.git"
+  },
+  "dependencies": {
+    "chalk": "1.1.1",
+    "falafel": "^1.2.0",
+    "generator-node": "trailsjs/generator-node",
+    "mkdirp": "^0.5.1",
+    "print-message": "1.4.0",
+    "trailpack-hapi": "0.0.7",
+    "trails": "latest",
+    "update-notifier": "0.5.0",
+    "yeoman-generator": "0.21.1",
+    "yosay": "1.1.0"
+  },
+  "devDependencies": {
+    "babel": "5.8.34",
+    "chai": "3.4.1",
+    "coveralls": "2.11.4",
+    "cz-conventional-changelog": "1.1.4",
+    "isparta": "4.0.0",
+    "mocha": "2.3.4",
+    "semantic-release": "4.3.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "publishConfig": {
+    "tag": "latest"
+  },
+  "release": {
+    "branch": "master"
+  }
+}
