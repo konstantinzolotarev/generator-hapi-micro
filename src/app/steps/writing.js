@@ -47,8 +47,8 @@ export default {
 
   pkg () {
     // node:app generator will merge into this
-    let package = require(this.templatePath('package.json'));
-    package.name = this.options.name;
-    this.fs.writeJSON(this.destinationPath('package.json'), package);
+    let pack = require(this.templatePath('package.json'));
+    pack.name = this.options.name;
+    this.fs.writeJSON(this.destinationPath('package.json'), pack);
   }
 };
