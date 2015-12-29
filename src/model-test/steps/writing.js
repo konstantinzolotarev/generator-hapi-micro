@@ -3,7 +3,7 @@
  * Where you write the generator specific files (routes, controllers, etc)
  */
 
-import Util from '../../app/util'
+// import Util from '../../app/util'
 
 const SOURCE_SMOKE_MODEL = `Model.smoke.js`;
 const SOURCE_INTEGRATION_MODEL = `Model.integration.js`;
@@ -14,7 +14,7 @@ const DESTINATION_MODEL_INTEGRATION = name => `test/integration/models/${name}.t
 const DESTINATION_MODEL_HELPER = name => `test/helper/model/${name}.js`;
 
 export default function () {
-  Util.patchConflicter()
+  // Util.patchConflicter()
 
   let name = (this['model-name'].charAt(0).toUpperCase() + this['model-name'].slice(1)).replace(/(\w+)Model$/, '$1');
   let fileName = `${name}`
