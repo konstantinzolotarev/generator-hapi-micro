@@ -18,17 +18,13 @@ export default {
   smoke() {
     let name = (this['model-name'].charAt(0).toUpperCase() + this['model-name'].slice(1)).replace(/(\w+)Model$/, '$1');
     let fileName = `${name}`
+    let filePath = this.destinationPath(DESTINATION_MODEL_SMOKE(name));
 
     this.template(SOURCE_SMOKE_MODEL, DESTINATION_MODEL_SMOKE(name), {name, fileName, answers: this.answers});
 
-    if (!this.fs.exists(this.destinationPath(DESTINATION_MODEL_SMOKE(name)))) {
-      return this.fs.write(this.destinationPath(DESTINATION_MODEL_SMOKE(name)), Util.getRequireStatement(fileName))
-    } else {
-      printMessage([
-        `Your test file: ${chalk.green(this.destinationPath(DESTINATION_MODEL_SMOKE(name)))} already exist!`,
-      ], {
-        printFn: this.log
-      });
+    if (!this.fs.exists(filePath)) {
+      return this.fs.write(filePath)
     }
+
   }
 };
