@@ -25,6 +25,17 @@ export default {
     if (!this.fs.exists(filePath)) {
       return this.fs.write(filePath)
     }
+  },
 
+  helper() {
+    let name = (this['model-name'].charAt(0).toUpperCase() + this['model-name'].slice(1)).replace(/(\w+)Model$/, '$1');
+    let fileName = `${name}`
+    let filePath = this.destinationPath(DESTINATION_MODEL_HELPER(name));
+
+    this.template(SOURCE_HELPER_MODEL, DESTINATION_MODEL_HELPER(name), {name, fileName, answers: this.answers});
+
+    if (!this.fs.exists(filePath)) {
+      return this.fs.write(filePath)
+    }
   }
 };

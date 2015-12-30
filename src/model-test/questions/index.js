@@ -22,11 +22,5 @@ export default [
     name: 'halper',
     message: 'Generate Helper for test',
     defaults: true
-  },
-  {
-    type: 'confirm',
-    name: 'integration',
-    message: 'Generate Integration test',
-    defaults: true
   }
 ];
