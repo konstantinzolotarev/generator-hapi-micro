@@ -1,6 +1,6 @@
 {
   "name": "generator-hapi-micro",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Hapi Microservice Yeoman Generator",
   "main": "generators/app/index.js",
   "keywords": [
